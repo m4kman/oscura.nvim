@@ -10,7 +10,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
 {
-  "jbaldwin/oscura.nvim",
+  "m4kman/oscura.nvim",
   lazy = false,
   priority = 1000,
   opts = {
@@ -23,7 +23,7 @@ Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
 
 ```lua
 use {
-  "jbaldwin/oscura.nvim",
+  "m4kman/oscura.nvim",
   config = function()
     require("oscura").setup({
       -- configuration options (see below)
