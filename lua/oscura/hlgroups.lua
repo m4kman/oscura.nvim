@@ -88,9 +88,9 @@ function M.get(theme)
 			bg = theme.editor.status_line.bg,
 			fg = theme.editor.status_line.fg,
 		},
-		-- ['TabLine'] = {},
-		-- ['TabLineFill'] = {},
-		-- ['TabLineSel'] = {},
+		["TabLine"] = { bg = theme.bg, fg = theme.fg_dark },
+		["TabLineFill"] = { bg = theme.bg },
+		["TabLineSel"] = { bg = theme.bg, fg = theme.fg, underline = true, sp = theme.fg },
 		["Title"] = { fg = theme.editor.title.fg },
 		["Visual"] = { bg = theme.editor.visual.bg },
 		-- ['VisualNOS'] = {},
@@ -138,7 +138,7 @@ function M.get(theme)
 			italic = theme.syntax.keyword.italic,
 		},
 		["Operator"] = {
-			fg = theme.syntax.keyword.fg,
+			fg = theme.syntax.operator.fg,
 		},
 		["Keyword"] = {
 			fg = theme.syntax.keyword.fg,
@@ -180,7 +180,7 @@ function M.get(theme)
 
 		["Special"] = { fg = theme.syntax.special.fg },
 		-- ['SpecialChar'] = {},
-		-- ['Tag'] = {},
+		["Tag"] = { fg = theme.syntax.tag.fg },
 		["Delimiter"] = { fg = theme.syntax.delimiter.fg },
 		-- ['SpecialComment'] = {},
 		-- ['Debug'] = {},
@@ -189,9 +189,9 @@ function M.get(theme)
 
 		-- ['Ignore'] = {},
 
-		["Error"] = { bg = theme.syntax.error.bg },
+		["Error"] = { fg = theme.diagnostic.error.fg },
 
-		["Todo"] = { bg = theme.syntax.todo.bg },
+		["Todo"] = { fg = theme.black, bg = theme.syntax.todo.bg },
 
 		["Added"] = { fg = theme.syntax.added.fg, bg = theme.syntax.added.bg },
 		["Changed"] = {
@@ -240,7 +240,7 @@ function M.get(theme)
 		},
 		["@module"] = { link = "Identifier" },
 		["@storageclass.rust"] = { link = "Keyword" },
-		["@tag.attribute"] = { link = "Identifier" },
+		["@tag.attribute"] = { fg = theme.syntax.attribute.fg },
 		["@tag.delimiter"] = { fg = theme.treesitter.tag.delimiter.fg },
 		["@tag.javascript"] = { link = "Type" },
 		["@tag.tsx"] = { link = "Type" },
@@ -627,6 +627,53 @@ function M.get(theme)
 			bg = theme.snacks.picker.list.bg,
 			fg = theme.mini.indentscope.fg,
 		},
+		
+		-- Additional highlight groups for Markdown
+		["markdownHeading"] = { fg = theme.syntax.function_.fg, bold = true },
+		["markdownH1"] = { fg = theme.syntax.function_.fg, bold = true },
+		["markdownH2"] = { fg = theme.syntax.function_.fg, bold = true },
+		["markdownH3"] = { fg = theme.syntax.function_.fg, bold = true },
+		["markdownH4"] = { fg = theme.syntax.function_.fg, bold = true },
+		["markdownH5"] = { fg = theme.syntax.function_.fg, bold = true },
+		["markdownH6"] = { fg = theme.syntax.function_.fg, bold = true },
+		["markdownCode"] = { fg = theme.syntax.comment.fg },
+		["markdownCodeBlock"] = { fg = theme.syntax.comment.fg },
+		["markdownBlockquote"] = { fg = theme.syntax.string.fg, italic = true },
+		["markdownListMarker"] = { fg = theme.syntax.function_.fg },
+		["markdownOrderedListMarker"] = { fg = theme.syntax.function_.fg },
+		["markdownRule"] = { fg = theme.editor.non_text.fg },
+		["markdownLinkText"] = { fg = theme.syntax.string.fg, underline = true },
+		["markdownUrl"] = { fg = theme.blue, underline = true },
+		
+		-- Additional Web Development highlights
+		["htmlTag"] = { fg = theme.syntax.delimiter.fg },
+		["htmlEndTag"] = { fg = theme.syntax.delimiter.fg },
+		["htmlTagName"] = { fg = theme.syntax.tag.fg },
+		["htmlArg"] = { fg = theme.syntax.attribute.fg },
+		["htmlTitle"] = { fg = theme.syntax.string.fg, bold = true },
+		["htmlLink"] = { fg = theme.blue, underline = true },
+		["htmlSpecialChar"] = { fg = theme.syntax.number.fg },
+		["htmlSpecialTagName"] = { fg = theme.syntax.tag.fg },
+		
+		["cssTagName"] = { fg = theme.syntax.tag.fg },
+		["cssClassName"] = { fg = theme.syntax.tag.fg },
+		["cssIdentifier"] = { fg = theme.syntax.tag.fg },
+		["cssColor"] = { fg = theme.syntax.number.fg },
+		["cssValueLength"] = { fg = theme.syntax.number.fg },
+		["cssValueNumber"] = { fg = theme.syntax.number.fg },
+		["cssDefinition"] = { fg = theme.syntax.attribute.fg },
+		["cssAttr"] = { fg = theme.syntax.string.fg },
+		["cssAttrRegion"] = { fg = theme.syntax.string.fg },
+		["cssFunction"] = { fg = theme.syntax.function_.fg },
+		
+		["jsonKeyword"] = { fg = theme.syntax.tag.fg },
+		["jsonString"] = { fg = theme.syntax.string.fg },
+		["jsonNumber"] = { fg = theme.syntax.number.fg },
+		["jsonBoolean"] = { fg = theme.syntax.number.fg },
+		["jsonNull"] = { fg = theme.syntax.keyword.fg, italic = true },
+
+        -- URL Highlighting
+        ["@text.uri"] = { fg = theme.blue, underline = true },
 	}
 end
 

@@ -261,7 +261,7 @@ local themes = {
                     underline = true,
                 },
                 error = {
-                    bg = palette.red,
+                    fg = palette.red_error,
                 },
                 todo = {
                     bg = palette.yellow,
@@ -278,6 +278,12 @@ local themes = {
                     fg = palette.black,
                     bg = palette.git_delete,
                 },
+                tag = {
+                    fg = palette.tag,
+                },
+                attribute = {
+                    fg = palette.attribute,
+                },
             },
             git = {
                 added = {
@@ -290,6 +296,7 @@ local themes = {
                     fg = palette.git_change,
                     inline = {
                         bg = palette.diff_add,
+                        fg = palette.git_change,
                     },
                 },
                 removed = {
@@ -482,6 +489,7 @@ local themes = {
                     bg = config.float_borderless and palette.bg_popup or main.bg,
                 },
                 progress = {
+                    bg = main.bg,
                     done = {
                         fg = palette.comment,
                     },
