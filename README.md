@@ -1,6 +1,6 @@
 # oscura.nvim
 
-A dark colorscheme for Neovim inspired by the cold.nvim colorscheme but with a unique look.
+A neovim port of Oscura —an unapologetically dark and minimal theme based on Fey. 🌘
 
 ## Features
 
