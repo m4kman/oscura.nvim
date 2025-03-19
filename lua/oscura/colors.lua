@@ -12,9 +12,9 @@ local palette = {
 	bg_popup = "#2C2C31",              -- Input box background
 	border = "#282828",                -- Border color
 	border_highlight = "#E6E7A3",      -- Focus border color
-	bg_visual = "#EAEC8A16",           -- Selected text background
-	bg_search = "#FFFFFF08",           -- Search highlight background
-	bg_word_highlight = "#EAEC8A21",   -- Reference highlight background
+	bg_visual = "#303033",             -- Selected text background (adjusted from #EAEC8A16)
+	bg_search = "#2A2A2E",             -- Search highlight background (adjusted from #FFFFFF08)
+	bg_word_highlight = "#333339",     -- Reference highlight background (adjusted from #EAEC8A21)
 	
 	-- Syntax highlighting colors
 	comment = "#46474F",               -- Comments
@@ -44,8 +44,8 @@ local palette = {
 	git_change = "#E6E7A3",            -- Modified lines
 	
 	-- Diff colors
-	diff_add = "#E6E6E615",            -- Added text background
-	diff_delete = "#D84F6815",         -- Removed text background
+	diff_add = "#2D2D35",              -- Added text background (adjusted from #E6E6E615)
+	diff_delete = "#352A31",           -- Removed text background (adjusted from #D84F6815)
 	
 	-- Special
 	warning = "#FFA16C",               -- Warnings
