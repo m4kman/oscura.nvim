@@ -2,13 +2,6 @@
 
 A neovim port of Oscura —an unapologetically dark and minimal theme based on Fey. 🌘
 
-## Features
-
-- Stylish and clean dark theme
-- Support for popular plugins like nvim-tree, telescope, lsp, treesitter, etc.
-- Customizable through configuration options
-- Built-in caching for fast loading
-
 ## Installation
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim):
