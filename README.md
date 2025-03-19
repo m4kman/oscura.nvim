@@ -1,33 +1,15 @@
-# Oscura.nvim
+# oscura.nvim
 
-A Neovim colorscheme inspired by [Oscura](https://x.com/tcosta_co/status/1902043771493085400) theme from Fey.
+A dark colorscheme for Neovim inspired by the cold.nvim colorscheme but with a unique look.
 
 ## Features
 
-- Dark theme with carefully selected colors
-- Support for multiple UI components (NvimTree, Telescope, etc.)
-- Support for LSP, Treesitter, Git and more
-- Configurable styling options
-
-## Screenshots
-
-(Coming soon)
+- Stylish and clean dark theme
+- Support for popular plugins like nvim-tree, telescope, lsp, treesitter, etc.
+- Customizable through configuration options
+- Built-in caching for fast loading
 
 ## Installation
-
-Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
-
-```lua
-use({
-  "jbaldwin/oscura.nvim",
-  config = function()
-    require("oscura").setup({
-      -- options
-    })
-    vim.cmd([[colorscheme oscura]])
-  end,
-})
-```
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
@@ -37,37 +19,71 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
   lazy = false,
   priority = 1000,
   opts = {
-    -- options
+    -- configuration options (see below)
   },
-  config = function(_, opts)
-    require("oscura").setup(opts)
-    vim.cmd([[colorscheme oscura]])
-  end,
+}
+```
+
+Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
+
+```lua
+use {
+  "jbaldwin/oscura.nvim",
+  config = function()
+    require("oscura").setup({
+      -- configuration options (see below)
+    })
+  end
 }
 ```
 
 ## Configuration
 
-Oscura.nvim comes with these defaults:
+The colorscheme comes with the following default options:
 
 ```lua
-require("oscura").setup({
-  style = "default", -- reserved for future styles
-  transparent = false, -- Enable transparent background
-  terminal_colors = true, -- Set terminal colors
-  styles = {
-    comments = { italic = true },
-    keywords = { italic = false },
-    functions = { bold = false },
-    variables = {},
-    sidebars = "dark", -- style for sidebars
-    floats = "dark", -- style for floating windows
+{
+  cursorline = vim.o.cursorline,
+  transparent_background = false, -- Set to true for transparent background
+  nvim_tree_darker = false,
+  undercurl = true,
+  italic_string = false,
+  italic_keyword = false,
+  italic_type = {
+    normal = false,
+    builtin = false,
+    definition = false,
   },
-  sidebars = { "qf", "help", "terminal", "packer", "NvimTree", "Trouble" },
-  hide_inactive_statusline = false,
-  dim_inactive = false,
-  lualine_bold = false, -- When true, section headers in the lualine theme will be bold
-})
+  italic_constant = {
+    builtin = false,
+  },
+  italic_function = {
+    declaration = false,
+    call = false,
+    method = {
+      declaration = false,
+      call = false,
+    },
+  },
+  custom_dark_background = nil, -- Set a custom background color
+  treesitter_context_bg = true,
+  float_borderless = false,
+}
+```
+
+## Commands
+
+The plugin provides the following commands:
+
+- `OscuraCompile`: Recompile the colorscheme (useful after changing configuration)
+- `OscuraColorschemeFile`: Generate a standalone Lua file with the colorscheme (to be used without the plugin)
+
+## Usage
+
+After installation, you can use the colorscheme by adding the following to your configuration:
+
+```lua
+vim.cmd.colorscheme "oscura"
 ```
 
 ## License
