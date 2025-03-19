@@ -2,6 +2,8 @@
 
 A neovim port of Oscura —an unapologetically dark and minimal theme based on Fey. 🌘
 
+original tweet: https://x.com/tcosta_co/status/1902043771493085400
+
 ## Installation
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim):
